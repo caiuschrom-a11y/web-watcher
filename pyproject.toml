@@ -1,0 +1,14 @@
+[project]
+name = "web-watcher"
+version = "0.1.0"
+description = "24/7 web-page change monitor. Watches 100-1000+ pages on a schedule; Qwen summarizes what changed. $99-499/mo per watch-set."
+requires-python = ">=3.11"
+dependencies = ["httpx>=0.27.0", "selectolax>=0.3.27", "openai>=1.55.0", "click>=8.1.0", "pydantic>=2.9.0", "tenacity>=9.0.0"]
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+[project.scripts]
+webwatch = "src.cli:cli"
